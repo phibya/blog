@@ -1,0 +1,7 @@
+.title-animation-in {
+    animation: appear 0.5s ease-in-out forwards;
+}
+
+.title-animation-out {
+    animation: disappear 0.5s ease-in-out forwards;
+}

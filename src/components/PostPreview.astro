@@ -1,0 +1,71 @@
+---
+import {type CollectionEntry} from 'astro:content';
+import ArrowRight from '../icons/ArrowRight.astro';
+import FormattedDate from './FormattedDate.astro';
+
+type Props = { post: CollectionEntry<'writing'>; class?: string; headingLevel?: 'h2' | 'h3' };
+
+const {post, class: className, headingLevel = 'h2'} = Astro.props;
+const {title, publishDate, updatedDate, excerpt} = post.data;
+const TitleTag = headingLevel;
+---
+
+<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/writing/${post.slug}/`}>
+    <div class="grow">
+        <TitleTag
+                class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
+                transition:name={`title-${post.slug}`}
+        >
+            {title}
+        </TitleTag>
+        <div class="mt-1 text-sm leading-normal" transition:name={`preview-${post.slug}`}>
+            <FormattedDate date={publishDate} transition:name={`date-${post.slug}`}/>
+            {
+                updatedDate && (
+                            <>
+                                {' '}
+                                <span>
+                            (Updated on <FormattedDate date={updatedDate} transition:name={`date-${post.slug}`}/>)
+                        </span>
+                            </>
+                )
+            }
+        </div>
+        {excerpt &&
+                <div class="mt-3 text-sm leading-normal" transition:name={`content-${post.slug}`}>{excerpt}</div>}
+    </div>
+    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
+        Read Post
+        <ArrowRight class="fill-current w-4 h-4"/>
+    </div>
+</a>
+
+<script>
+    //find all svg images in the post, download them and replace the img tag with the svg content
+
+    const replaceSVGs = () => {
+        const svgs = document.querySelectorAll('article img[src$=".svg"]');
+        for (const img of svgs) {
+            fetch(img.src)
+                .then((response) => response.text())
+                .then((svg) => {
+                    const div = document.createElement('div');
+                    div.innerHTML = svg;
+
+                    //remove dimensions from the svg
+                    const svgElement = div.querySelector('svg');
+                    const width = svgElement.getAttribute('width');
+                    const height = svgElement.getAttribute('height');
+                    svgElement.removeAttribute('width');
+                    svgElement.removeAttribute('height');
+                    svgElement.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+                    img.replaceWith(svgElement);
+                });
+        }
+    }
+
+    replaceSVGs();
+    document.addEventListener('astro:after-swap', replaceSVGs);
+
+</script>
