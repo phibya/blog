@@ -54,6 +54,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'Projects',
             href: '/projects'
+        },
+        {
+            text: 'Resume',
+            href: '/PhiBya-Resume.pdf'
         }
     ],
     footerNavLinks: [
