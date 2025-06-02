@@ -58,6 +58,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'Resume',
             href: '/PhiBya-Resume.pdf'
+        },
+        {
+            text: 'Scholar',
+            href: 'https://scholar.google.com/citations?user=yw6kjSYAAAAJ&hl=en'
         }
     ],
     footerNavLinks: [
@@ -65,6 +69,22 @@ const siteConfig: SiteConfig = {
             text: 'About',
             href: '/'
         },
+        {
+            text: 'Writing',
+            href: '/writing'
+        },
+        {
+            text: 'Projects',
+            href: '/projects'
+        },
+        {
+            text: 'Resume',
+            href: '/PhiBya-Resume.pdf'
+        },
+        {
+            text: 'Scholar',
+            href: 'https://scholar.google.com/citations?user=yw6kjSYAAAAJ&hl=en'
+        }
     ],
     socialLinks: [
         {
@@ -75,10 +95,6 @@ const siteConfig: SiteConfig = {
             text: 'GitHub',
             href: 'https://github.com/phibya'
         },
-        {
-            text: 'Scholar',
-            href: 'https://scholar.google.com/citations?user=yw6kjSYAAAAJ&hl=en'
-        }
     ],
     postsPerPage: 8,
     projectsPerPage: 8
