@@ -40,7 +40,7 @@ journal
 In this folder `collection-*.wt` and `index-*.wt` files contain the actual data and indexes of your collections.
 Whenever you create a new database or collection, MongoDB creates the same structure as above.
 
-Here what we are going to do is to create a new database and copy the `collection-*.wt` and `index-*.wt` files from the corrupted database to the new database and use `mongod --repair` to recover the data.
+Here what we are going to do is to create a new database and copy the `collection-*.wt` files from the corrupted database to the new database and use `mongod --repair` to recover the data.
 
 1. Create a new database folder
 ```
