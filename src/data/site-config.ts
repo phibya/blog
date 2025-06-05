@@ -56,17 +56,13 @@ const siteConfig: SiteConfig = {
             href: '/projects'
         },
         {
-            text: 'Resume',
-            href: '/PhiBya-Resume.pdf'
-        },
-        {
             text: 'Scholar',
             href: 'https://scholar.google.com/citations?user=yw6kjSYAAAAJ&hl=en'
         }
     ],
     footerNavLinks: [
         {
-            text: 'About',
+            text: 'Home',
             href: '/'
         },
         {
@@ -78,8 +74,12 @@ const siteConfig: SiteConfig = {
             href: '/projects'
         },
         {
-            text: 'Resume',
+            text: 'Data Scientist Resume',
             href: '/PhiBya-Resume.pdf'
+        },
+        {
+            text: 'Software Engineer Resume',
+            href: '/PhiBya-Resume-SE.pdf'
         },
         {
             text: 'Scholar',

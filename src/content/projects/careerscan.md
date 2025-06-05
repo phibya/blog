@@ -1,7 +1,7 @@
 ---
 title: CareerScan
 slug: careerscan
-description: A simple web app to help you find your next job without overwhelming by advertisements.
+description: A simple web app to help you find your next job without being overwhelmed by advertisements.
 publishDate: 'March 12, 2023'
 tags:
   - jobs
